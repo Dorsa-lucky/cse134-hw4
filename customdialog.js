@@ -17,13 +17,13 @@ export function disableBtns(){
 
 //displaying alert
 export function displayAlert(){
-    disable_buttons();
+    disableBtns();
     document.getElementById("dialogAlert").show();
 }
-
+document.getElementById("myAlert").addEventListener("click",displayAlert);
 //closing alert
 export function closeAlert(){
-    disable_buttons();
+    enableBtns();
     document.getElementById("dialogAlert").close();
 }
 
