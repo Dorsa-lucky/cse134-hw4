@@ -44,3 +44,13 @@ export function confirmOk(){
     const confirmButton = document.getElementById("confirmTrigger");
     confirmButton.textContent = `The value returned by the confirmation method is: ${cnfvalue}`;
 }
+export function confirmCancel(){
+    enableBtns();
+    cnfValue = false;
+    const confirmButton = document.getElementById("confirmTrigger");
+    confirmButton.textContent = `The value returned by the confirmation method is: ${cnfvalue}`;
+}
+
+document.getElementById("my_confirm").addEventListener("click", displayConfirm);
+document.getElementById("confirmOK").addEventListener("click", confirmOk);
+document.getElementById("confirmCancel").addEventListener("click", confirmCancel);
