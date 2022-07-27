@@ -21,7 +21,9 @@ export function displayAlert(){
     document.getElementById("dialogAlert").show();
 }
 document.getElementById("myAlert").addEventListener("click",displayAlert);
-//closing alert
+
+
+//closing alertttt
 export function closeAlert(){
     enableBtns();
     document.getElementById("dialogAlert").close();
