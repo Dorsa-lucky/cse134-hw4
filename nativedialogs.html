@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Simple Dialogs</title>
+<script type="text/javascript" src="purify.min.js"></script>
+</head>
+<body>
+  <button id="myAlert">Alert</button>
+  <br><br>
+  
+  <button id="confirmTrigger">Show Confirm</button>
+  <br><br>
+  <button id="promptMe">Prompt</button>
+  <br><br>
+  <button id="saferPrompt">Safer Prompt</button>
+  <br><br>
+  <hr>
+  <output id="result"></output>
+  <script>
+
+    //Alert
+    document.getElementById("myAlert").addEventListener("click",()=>{
+    alert("Alerting you leave the page ASAP")
+  });
+
+    //Confirm
+  const confirmButton = document.getElementById("confirmTrigger");
+  confirmButton.addEventListener("click",function(confirmFun){
+    if(window.confirm("Do you confirm?")){
+      result.innerText = "The value returned by the confirmation method is: True";
+    }else{
+      result.innerText = "The value returned by the confirmation method is: False";
+    }
+  })
+
+  //Prompt
+  const promtPage = document.getElementById("promptMe");
+  promtPage.addEventListener("click",function promptMe(){
+    const userAdjective = prompt("Please provide an Adjective");
+    if(userAdjective != null && userAdjective != ""){
+      result.innerHTML = `The value returned by the prompt method is: ${userAdjective}`;
+    }else{
+      result.innerHTML = "User didn’t enter anything!";
+    }  
+  })
+
+  //Safer prompt
+  const saferPrompt = document.getElementById("saferPrompt");
+  saferPrompt.addEventListener("click", function saferPrompt(){
+    const userInput = prompt("Please provide an input:");
+    if(userInput != null && userInput != ""){
+      var checkText = DOMPurify.sanitize(userInput);
+      result.innerHTML = `The value returned by the safer prompt method is: ${checkText}`;
+    }else{
+      result.innerHTML = "User didn’t enter anything!";
+    }  
+  })
+  
+    
+  </script>
+</body>
+</html>
