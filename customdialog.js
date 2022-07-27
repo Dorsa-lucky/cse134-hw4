@@ -51,6 +51,6 @@ export function confirmCancel(){
     confirmButton.textContent = `The value returned by the confirmation method is: ${cnfvalue}`;
 }
 
-document.getElementById("my_confirm").addEventListener("click", displayConfirm);
+document.getElementById("confirmTrigger").addEventListener("click", displayConfirm);
 document.getElementById("confirmOK").addEventListener("click", confirmOk);
 document.getElementById("confirmCancel").addEventListener("click", confirmCancel);
