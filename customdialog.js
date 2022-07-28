@@ -32,7 +32,7 @@ document.getElementById("AlertBtn").addEventListener("click",closeAlert);
 
 //displaying confirm
 export function displayConfirm(){
-    disable_buttons();
+    disableBtns();
     document.getElementById("dialogConfirm").show();
 }
 
