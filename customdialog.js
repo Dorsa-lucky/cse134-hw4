@@ -35,22 +35,24 @@ export function displayConfirm(){
     disableBtns();
     document.getElementById("dialogConfirm").show();
 }
+document.getElementById("confirmTrigger").addEventListener("click", displayConfirm);
 
 //confirming OK
-export let cnfValue;
+
 export function confirmOk(){
     enableBtns();
-    cnfValue = true;
-    const confirmButton = document.getElementById("confirmTrigger");
-    confirmButton.textContent = `The value returned by the confirmation method is: ${cnfvalue}`;
+    document.getElementById("dialogConfirm").close();
+    let confirmButton = document.getElementById("result");
+    confirmButton.textContent = `The value returned by the confirmation method is: True`;
+    //result.innerText = "The value returned by the confirmation method is: True";
 }
+document.getElementById("confirmOK").addEventListener("click", confirmOk);
+
+
 export function confirmCancel(){
     enableBtns();
-    cnfValue = false;
-    const confirmButton = document.getElementById("confirmTrigger");
-    confirmButton.textContent = `The value returned by the confirmation method is: ${cnfvalue}`;
+    document.getElementById("dialogConfirm").close();
+    confirmButton = document.getElementById("result");
+    confirmButton.textContent = `The value returned by the confirmation method is: False`;
 }
-
-document.getElementById("confirmTrigger").addEventListener("click", displayConfirm);
-document.getElementById("confirmOK").addEventListener("click", confirmOk);
 document.getElementById("confirmCancel").addEventListener("click", confirmCancel);
