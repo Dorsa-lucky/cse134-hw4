@@ -19,7 +19,7 @@ export function disableBtns(){
 export function displayAlert(){
     disableBtns();
     document.getElementById("dialogAlert").show();
-    document.getElementById("result").style.display="none";
+    document.getElementById("result").innerHTML="";
 }
 document.getElementById("myAlert").addEventListener("click",displayAlert);
 
@@ -62,7 +62,7 @@ export function displayPrompt(){
 document.getElementById("promptMe").addEventListener("click", displayPrompt);
 
 //prompting OK
-export function prompt_Ok(){
+export function promptOk(){
     enableBtns();
     document.getElementById("dialogPrompt").close();
     const userAdjective = document.getElementById("adjective").value;
@@ -76,7 +76,7 @@ export function prompt_Ok(){
     document.getElementById("result").style.display = "initial";
 
 }
-document.getElementById("promptOK").addEventListener("click", prompt_Ok);
+// document.getElementById("promptOK").addEventListener("click", promptOk);
 
 //prompting Cancel
 // export function promptCancel(){
