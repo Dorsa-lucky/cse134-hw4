@@ -61,22 +61,26 @@ export function displayPrompt(){
 document.getElementById("promptMe").addEventListener("click", displayPrompt);
 
 //prompting OK
-export function confirmOk(){
+export function prompt_Ok(){
     enableBtns();
     document.getElementById("dialogPrompt").close();
-    let userAdjective = document.getElementById("adjective").value;
+    const userAdjective = document.getElementById("adjective").value;
+    console.log(userAdjective);
     if(userAdjective != null && userAdjective != ""){
-        result.innerHTML = `The value returned by the prompt method is: ${userAdjective}`;
-      }else{
-        result.innerHTML = "User didn’t enter anything!";
+        document.getElementById("result").innerHTML = `The value returned by the prompt method is: ${userAdjective}`;
+      }
+    else{
+        document.getElementById("result").innerHTML = "User didn't enter anything!";
       } 
+    document.getElementById("result").style.display = "initial";
+
 }
-document.getElementById("confirmOK").addEventListener("click", confirmOk);
+document.getElementById("promptOK").addEventListener("click", prompt_Ok);
 
 //prompting Cancel
-export function confirmCancel(){
-    enableBtns();
-    document.getElementById("dialogPrompt").close();
-    result.innerText = "The value returned by the confirmation method is: False";
-}
-document.getElementById("confirmCancel").addEventListener("click", confirmCancel);
+// export function promptCancel(){
+//     enableBtns();
+//     document.getElementById("dialogPrompt").close();
+//     result.innerText = "The value returned by the confirmation method is: False";
+// }
+// document.getElementById("promptCancel").addEventListener("click", promptCancel);
