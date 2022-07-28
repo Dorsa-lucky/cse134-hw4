@@ -19,6 +19,7 @@ export function disableBtns(){
 export function displayAlert(){
     disableBtns();
     document.getElementById("dialogAlert").show();
+    document.getElementById("result").style.display="none";
 }
 document.getElementById("myAlert").addEventListener("click",displayAlert);
 
