@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HW4 part 3</title>
+    <script type="module" src="/blog.js"></script>
+</head>
+
+<body>
+    <a href="/index.html">back to home page</a>
+    <ul id="userInput"></ul>
+        
+    <br>
+    <button id="add">Add Post</button>
+
+    <dialog id="addDialog">
+        <table style="text-align: center;">
+            <tr>
+                <td><label for="title">Title:</label></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="title" name="title"></td>
+            </tr>
+            <tr>
+                <td><label for="summary">Summary:</label></td>
+            </tr>
+            <tr>
+                <td><textarea id="summary" name="summary" rows="3"></textarea></td>
+            </tr>
+            <tr>
+                <td><button id="okBtn">OK</button> <button id="cancelBtn">Cancel</button></td>
+            </tr>
+        </table>
+    </dialog>
+
+    <dialog id="editDialog">
+        <table style="text-align: center;">
+            <tr>
+                <td>Edit</td>
+            </tr>
+            <tr>
+                <td><label for="editTitle">Post Title</label></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="editTitle" name="editTitle"></td>
+            </tr>
+            <tr>
+                <td><label for="editSummary">Post summary</label></td>
+            </tr>
+            <tr>
+                <td><textarea id="editSummary" name="editSummary" rows="3"></textarea></td>
+            </tr>
+            <tr>
+                <td><button id="okEditBtn">OK</button> <button id="cancelEditBtn">Cancel</button></td>
+            </tr>
+        </table>
+    </dialog>
+
+    
+   
+</body>
+</html>

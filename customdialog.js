@@ -35,6 +35,7 @@ document.getElementById("AlertBtn").addEventListener("click",closeAlert);
 export function displayConfirm(){
     disableBtns();
     document.getElementById("dialogConfirm").show();
+    document.getElementById("result").innerHTML="";
 }
 document.getElementById("confirmTrigger").addEventListener("click", displayConfirm);
 
@@ -58,30 +59,55 @@ document.getElementById("confirmCancel").addEventListener("click", confirmCancel
 export function displayPrompt(){
     disableBtns();
     document.getElementById("dialogPrompt").show();
+    document.getElementById("result").innerHTML="";
 }
 document.getElementById("promptMe").addEventListener("click", displayPrompt);
 
 //prompting OK
-export function promptOk(){
+export function prompt_Ok(){
     enableBtns();
     document.getElementById("dialogPrompt").close();
     const userAdjective = document.getElementById("adjective").value;
-    console.log(userAdjective);
     if(userAdjective != null && userAdjective != ""){
-        document.getElementById("result").innerHTML = `The value returned by the prompt method is: ${userAdjective}`;
+        result.innerHTML = `The value returned by the prompt method is: ${userAdjective}`;
       }
-    else{
-        document.getElementById("result").innerHTML = "User didn't enter anything!";
-      } 
-    document.getElementById("result").style.display = "initial";
-
 }
-// document.getElementById("promptOK").addEventListener("click", promptOk);
+document.getElementById("promptOk").addEventListener("click", prompt_Ok);
 
 //prompting Cancel
-// export function promptCancel(){
-//     enableBtns();
-//     document.getElementById("dialogPrompt").close();
-//     result.innerText = "The value returned by the confirmation method is: False";
-// }
-// document.getElementById("promptCancel").addEventListener("click", promptCancel);
+export function promptCancel(){
+    enableBtns();
+    document.getElementById("dialogPrompt").close();
+    result.innerHTML = "User didn't enter anything!";
+}
+document.getElementById("promptCancel").addEventListener("click", promptCancel);
+
+//displaying prompt
+export function displaySaferPrompt(){
+    disableBtns();
+    document.getElementById("dialogSaferPrompt").show();
+    document.getElementById("result").innerHTML="";
+}
+document.getElementById("saferPrompt").addEventListener("click", displaySaferPrompt);
+
+//saferPrompting OK
+export function safer_Ok(){
+    enableBtns();
+    document.getElementById("dialogSaferPrompt").close();
+    const userInput = document.getElementById("userInput").value;
+    const san_userInput = DOMPurify.sanitize(userInput);
+    if(san_userInput != null && san_userInput != ""){
+        result.innerHTML = `The value returned by the prompt method is: ${san_userInput}`;
+      }
+     
+}
+document.getElementById("saferOk").addEventListener("click", safer_Ok);
+
+//saferPrompting Cancel
+export function saferCancel(){
+    enableBtns();
+    document.getElementById("dialogSaferPrompt").close();
+    result.innerHTML = "User didn't enter anything!";
+    
+}
+document.getElementById("saferCancel").addEventListener("click", saferCancel);
